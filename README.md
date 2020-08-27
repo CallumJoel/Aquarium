@@ -1,27 +1,34 @@
-window.onload=function() {
+window.onload = function() {
 	lengthObj = document.getElementById('txtLength');
 	widthObj = document.getElementById('txtWidth');
 	heightObj = document.getElementById('txtHeight');
-	costObj = document.getElementById('tdCost');
+	SurfaceAreaObj = document.getElementById('tdCost');
 	document.getElementById('btnReset').onclick = resetInputs;
-	document.getElementById('btnCalcCost').onclick = calcWeight;
+	document.getElementById('btnCalcCost').onclick = SurfaceArea;
 }
 
 function resetInputs() {
-    lengthObj.value = '';
+     lengthObj.value = '';
      widthObj.value = '';
      heightObj.value = '';
-     costObj.innerHTML = '';
+     SurfaceAreaObj.innerHTML = '';
 }
 
-function calcWeight() {
+function SurfaceArea() {
 	var length = new Number(lengthObj.value);
     var width = new Number(widthObj.value);
 	var height = new Number(heightObj.value);
-    costObj.innerHTML = '';
+    SurfaceArea.innerHTML = '';
     if(isNaN(length) || isNaN(width) || isNaN(height)) {
-         alert('Invalid length, width or height');
+         alert('Invalid length or width or height');
          return;
 	}
-    costObj.innerHTML = length*Math.pow(width, height)/800;
+    SurfaceAreaObj.innerHTML = (length*width*2) + (length*height*2) + (width*height*2);
 }
+function Edges() {
+	var length = new Number(lengthObj.value);
+	var width = new Number(widthObj.value);
+	var height = new Number(heightObj.value);
+	(length*width*2) + (length*height*2) + (width*height*2);
+	}
+
